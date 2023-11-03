@@ -73,6 +73,8 @@ In [26]:
     Maybe finished by tomorrow. It's likely an x^3 polynomial time algorithm, needs verifiability
     Not finished yet. Thank you Python Software Foundation, MITx, HarvardX and edX.org and Ana Bell, Eric Grimson and John Guttag for teaching me Python at edX.org and MITx
     Thanks National Cryptologic Museum
+    Now to work in the factorial of 3 for all non-indexed indices
+    Going to need list copies.
 """
 
 def Charles():
