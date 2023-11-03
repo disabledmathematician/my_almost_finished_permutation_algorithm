@@ -155,6 +155,68 @@ Needs individual mutation for offset
 
 [Program finished]
 
+4 stays in position 4
+3 is swapped with 3
+01000
+01000
+3 is swapped with 2
+01000
+00100
+3 is swapped with 1
+01000
+00010
+3 is swapped with 0
+01000
+00001
+Outer loop: 4 is swapped with 3
+10000
+01000
+00111
+Outer loop: 4 is swapped with 2
+10000
+00100
+01011
+Inner loop: 2 is swapped with 3
+Inner loop: 2 is swapped with 4
+Outer loop: 4 is swapped with 1
+10000
+00010
+01101
+Inner loop: 1 is swapped with 2
+Inner loop: 1 is swapped with 3
+Inner loop: 1 is swapped with 4
+Outer loop: 4 is swapped with 0
+10000
+00001
+01110
+Inner loop: 0 is swapped with 1
+Inner loop: 0 is swapped with 2
+Inner loop: 0 is swapped with 3
+Inner loop: 0 is swapped with 4
+Outer loop: 3 is swapped with 2
+01000
+00100
+10011
+Outer loop: 3 is swapped with 1
+01000
+00010
+10101
+Inner loop: 1 is swapped with 2
+Inner loop: 1 is swapped with 3
+Inner loop: 1 is swapped with 4
+Outer loop: 3 is swapped with 0
+01000
+00001
+10110
+Inner loop: 0 is swapped with 1
+Inner loop: 0 is swapped with 2
+Inner loop: 0 is swapped with 3
+Inner loop: 0 is swapped with 4
+120
+Needs individual mutation for offset
+
+[Program finished]
+
 """
 
 def Charles():
@@ -166,6 +228,25 @@ def Charles():
     c = lL
     d = len(L) - 1
     count = 0
+    x = 1
+    y = 1
+#    print("{:05b}".format(x))
+#    print("{:05b}".format(y))
+    c, b = len(L) - 1, len(L) - 1
+    print("{} stays in position {}".format(c, b))
+    count = -6
+    c = len(L) - 2
+    b = c
+    x <<= c
+    y <<= b
+    while b >= 0:
+    	print("{} is swapped with {}".format(c, b))
+    	print("{:05b}".format(x))
+    	print("{:05b}".format(y))
+
+    	count += 6
+    	b -= 1
+    	y >>= 1
     while d >= 3:
         c = d - 1
         while c >= 0:
@@ -179,17 +260,18 @@ def Charles():
             print("{:05b}".format(x))
             print("{:05b}".format(y))
             print("{:05b}".format((x + y) ^ (int('11111', 2))))
-            count += 1
+            count += 6
             c2 = c
             y2 = y
             c2 += 1
             while c2 <= ((len(L) - 1)) and c != d - 1:
                 print("Inner loop: {} is swapped with {}".format(c, c2))
-                count += 1
+#                count += 6
                 c2 += 1
             y >>= 1
             c -= 1
         d -= 1
-    print("Count plus one times five: 5! or len(L) or " +  str((count + 1) * 5))
+    print(count * 2)
+#    print("Count plus one times five: 5! or len(L) or " +  str((count + 1) * 5))
     print("Needs individual mutation for offset")
 if __name__ == """__main__""": Charles()
