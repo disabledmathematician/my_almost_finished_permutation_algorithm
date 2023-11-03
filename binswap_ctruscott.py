@@ -104,6 +104,57 @@ Count plus one times five: 5! or len(L) or 120
 Needs individual mutation for offset
 
 [Program finished]
+
+
+Outer loop: 4 is swapped with 3
+10000
+01000
+00111
+Outer loop: 4 is swapped with 2
+10000
+00100
+01011
+Inner loop: 2 is swapped with 3
+Inner loop: 2 is swapped with 4
+Outer loop: 4 is swapped with 1
+10000
+00010
+01101
+Inner loop: 1 is swapped with 2
+Inner loop: 1 is swapped with 3
+Inner loop: 1 is swapped with 4
+Outer loop: 4 is swapped with 0
+10000
+00001
+01110
+Inner loop: 0 is swapped with 1
+Inner loop: 0 is swapped with 2
+Inner loop: 0 is swapped with 3
+Inner loop: 0 is swapped with 4
+Outer loop: 3 is swapped with 2
+01000
+00100
+10011
+Outer loop: 3 is swapped with 1
+01000
+00010
+10101
+Inner loop: 1 is swapped with 2
+Inner loop: 1 is swapped with 3
+Inner loop: 1 is swapped with 4
+Outer loop: 3 is swapped with 0
+01000
+00001
+10110
+Inner loop: 0 is swapped with 1
+Inner loop: 0 is swapped with 2
+Inner loop: 0 is swapped with 3
+Inner loop: 0 is swapped with 4
+Count plus one times five: 5! or len(L) or 120
+Needs individual mutation for offset
+
+[Program finished]
+
 """
 
 def Charles():
@@ -121,6 +172,13 @@ def Charles():
 #            print("{:05b}".format(x))
 #            print("{:05b}".format(y))
             print("Outer loop: {} is swapped with {}".format(d, c))
+            x = 1
+            y = 1
+            x = x << d
+            y = y << c
+            print("{:05b}".format(x))
+            print("{:05b}".format(y))
+            print("{:05b}".format((x + y) ^ (int('11111', 2))))
             count += 1
             c2 = c
             y2 = y
