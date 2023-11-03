@@ -26,7 +26,7 @@ def Charles():
 #    print("{:05b}".format(y))
     c, b = len(L) - 1, len(L) - 1
     print("{} stays in position {}".format(c, b))
-    count = 0
+    count = math.factorial(3)
 #    print("{:05b}".format(1 << c))
 #    print("{:05b}".format(1 << c - 1))
 #    p, q = int(1) << c, int(1) << (c - 1)
@@ -56,18 +56,18 @@ def Charles():
             print("{:05b}".format(x))
             print("{:05b}".format(y))
             print("{:05b}".format((x + y) ^ (int('11111', 2))))
-            count += math.factorial(3)
+#            count += 4
             c2 = c
             y2 = y
             c2 += 1
-      #      while c2 <= ((len(L) - 1)) and c != d - 1:
-   #             print("Inner loop: {} is swapped with {}".format(c, c2))
-#                count += 6
- #               c2 += 1
+            while c2 < d and c2 != d:
+                print("Inner loop: {} is swapped with {}".format(c2, d))
+#                count += math.factorial(3)
+                c2 += 1
             y >>= 1
             c -= 1
         d -= 1
-    print(count * 2)
+    print(count)
 #    print("Count plus one times five: 5! or len(L) or " +  str((count + 1) * 5))
     print("Needs individual mutation for offset")
 if __name__ == """__main__""": Charles()
