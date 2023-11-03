@@ -87,27 +87,22 @@ def Charles():
     d = len(L) - 1
     count = 0
     while d >= 3:
-        c = d
+        c = d - 1
         while c >= 0:
-            #        print("{:05b}".format(x))
-            #        print("{:05b}".format(y))
-            print("{} is swapped with {}".format(d, c))
-            temp = L[c]
-            temp2 = L[d]
-            L[d] = temp
-            L[c] = temp2
-            print(L)
+#            print("{:05b}".format(x))
+#            print("{:05b}".format(y))
+            print("Outer loop: {} is swapped with {}".format(d, c))
+            count += 1
             c2 = c
-            while c2 <= ((len(L) - 1) - 1):
-                temp3 = L[c]
-                temp4 = L[c2]
-                L[c2] = temp3
-                L[c] = temp4
-                print(L)
-                print("Previous {} is swapped to position {}".format(c2, c2 + 1))
+            y2 = y
+            c2 += 1
+            while c2 <= ((len(L) - 1)) and c != d - 1:
+                print("Inner loop: {} is swapped with {}".format(c, c2))
+                count += 1
                 c2 += 1
             y >>= 1
             c -= 1
         d -= 1
-#    print(count)
+    print("Count plus one times five: 5! or len(L) or " +  str((count + 1) * 5))
+    print("Needs individual mutation for offset")
 if __name__ == """__main__""": Charles()
