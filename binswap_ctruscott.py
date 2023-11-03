@@ -75,6 +75,35 @@ In [26]:
     Thanks National Cryptologic Museum
     Now to work in the factorial of 3 for all non-indexed indices
     Going to need list copies.
+    
+    
+Outer loop: 4 is swapped with 3
+Outer loop: 4 is swapped with 2
+Inner loop: 2 is swapped with 3
+Inner loop: 2 is swapped with 4
+Outer loop: 4 is swapped with 1
+Inner loop: 1 is swapped with 2
+Inner loop: 1 is swapped with 3
+Inner loop: 1 is swapped with 4
+Outer loop: 4 is swapped with 0
+Inner loop: 0 is swapped with 1
+Inner loop: 0 is swapped with 2
+Inner loop: 0 is swapped with 3
+Inner loop: 0 is swapped with 4
+Outer loop: 3 is swapped with 2
+Outer loop: 3 is swapped with 1
+Inner loop: 1 is swapped with 2
+Inner loop: 1 is swapped with 3
+Inner loop: 1 is swapped with 4
+Outer loop: 3 is swapped with 0
+Inner loop: 0 is swapped with 1
+Inner loop: 0 is swapped with 2
+Inner loop: 0 is swapped with 3
+Inner loop: 0 is swapped with 4
+Count plus one times five: 5! or len(L) or 120
+Needs individual mutation for offset
+
+[Program finished]
 """
 
 def Charles():
